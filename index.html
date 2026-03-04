@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Security & Design</title>
+    <title>Moolya Nishmitha - Cybersecurity Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -267,7 +267,234 @@
             font-size: 0.8rem;
         }
 
-        /* ===== SECURITY CHECKER SECTION ===== */
+        /* ===== CTF GAME SECTION ===== */
+        .ctf-container {
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.1), rgba(0, 212, 255, 0.05));
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-top: 2rem;
+        }
+
+        .ctf-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .ctf-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .level-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .level-btn {
+            padding: 12px 20px;
+            border: 2px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-secondary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .level-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .level-btn.active {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: #000;
+            border-color: var(--primary);
+        }
+
+        .ctf-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 12px;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .challenge-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .challenge-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .challenge-title {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .challenge-desc {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .challenge-input-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .challenge-input {
+            flex: 1;
+            padding: 10px 15px;
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .challenge-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .challenge-btn {
+            padding: 10px 20px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border: none;
+            border-radius: 6px;
+            color: #000;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .challenge-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .challenge-hint {
+            background: rgba(131, 56, 236, 0.1);
+            border-left: 3px solid var(--accent);
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.75rem;
+        }
+
+        .challenge-result {
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .challenge-result.show {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        .challenge-result.success {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+        }
+
+        .challenge-result.error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+
+        /* ===== SKILLS SECTION ===== */
+        .skills-category {
+            margin-bottom: 2rem;
+        }
+
+        .category-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateX(5px);
+            border-left-color: var(--secondary);
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .skill-badge {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-top: 0.3rem;
+        }
+
+        .skill-badge.exploring {
+            background: rgba(255, 0, 110, 0.2);
+            color: var(--secondary);
+        }
+
+        /* ===== SECURITY TOOLS SECTION ===== */
         .security-checker {
             background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(255, 0, 110, 0.05));
             border: 2px solid var(--border);
@@ -321,15 +548,20 @@
             background: var(--primary);
         }
 
+        .password-input-wrapper {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
         .checker-input {
             width: 100%;
             padding: 12px 16px;
+            padding-right: 45px;
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 8px;
             color: var(--text-primary);
             font-size: 1rem;
-            margin-bottom: 1rem;
             transition: all 0.3s ease;
         }
 
@@ -337,6 +569,23 @@
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .toggle-password:hover {
+            color: var(--primary);
         }
 
         .check-btn {
@@ -355,12 +604,6 @@
         .check-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-        }
-
-        .check-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
         }
 
         .result-box {
@@ -437,18 +680,104 @@
             margin-bottom: 1rem;
         }
 
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 1.5rem;
+        /* ===== PROJECT MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+            align-items: center;
+            justify-content: center;
         }
 
-        .skill-item {
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
             background: var(--card-bg);
-            padding: 1rem;
-            border-radius: 8px;
-            border-left: 3px solid var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 700px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            animation: slideUp 0.4s ease;
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--secondary);
+        }
+
+        .modal-body {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .modal-body h3 {
+            color: var(--primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .modal-body ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .modal-tag {
+            background: linear-gradient(90deg, rgba(0, 212, 255, 0.2), rgba(131, 56, 236, 0.2));
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
         }
 
         /* ===== FOOTER ===== */
@@ -499,6 +828,15 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
             }
         }
 
@@ -555,8 +893,12 @@
                 padding: 2rem;
             }
 
-            .skills-list {
-                grid-template-columns: 1fr;
+            .ctf-container {
+                padding: 2rem;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -565,74 +907,245 @@
     <!-- ===== NAVIGATION ===== -->
     <nav>
         <div class="nav-container">
-            <div class="logo">✨ Portfolio</div>
+            <div class="logo">🛡️ Moolya</div>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#security">Security</a></li>
+                <li><a href="#work">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#ctf">Try Skills</a></li>
+                <li><a href="#security">Tools</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="home">
-        <h1>Hey, I'm <span>You</span></h1>
-        <p>A creative developer passionate about building beautiful, secure web experiences. Check out my work, test your security, and let's connect.</p>
+        <h1>Hey, I'm <span>Moolya Nishmitha</span></h1>
+        <p>Cybersecurity & Forensics Specialist | Ethical Hacker | Web Security Researcher. Passionate about protecting digital assets, exposing vulnerabilities, and building secure systems. Let's talk security. 🛡️</p>
         <div class="cta-buttons">
-            <button class="btn btn-primary" onclick="document.getElementById('work').scrollIntoView({behavior: 'smooth'})">See My Work</button>
-            <button class="btn btn-secondary" onclick="document.getElementById('security').scrollIntoView({behavior: 'smooth'})">Check Security</button>
+            <button class="btn btn-primary" onclick="document.getElementById('work').scrollIntoView({behavior: 'smooth'})">View My Work</button>
+            <button class="btn btn-secondary" onclick="document.getElementById('ctf').scrollIntoView({behavior: 'smooth'})">Try Your Skills</button>
         </div>
     </section>
 
     <!-- ===== PORTFOLIO ===== -->
     <section class="section" id="work">
-        <h2 class="section-title">Featured Work</h2>
+        <h2 class="section-title">Featured Projects</h2>
         <div class="portfolio-grid">
-            <div class="portfolio-card">
-                <div class="card-header">🚀</div>
+            <div class="portfolio-card" onclick="openProject('vuln-assessment')">
+                <div class="card-header">🔓</div>
                 <div class="card-content">
-                    <h3>Project Alpha</h3>
-                    <p>A modern web app built with React and Tailwind CSS. Features real-time updates and smooth animations.</p>
+                    <h3>Vulnerability Assessment Tool</h3>
+                    <p>Built an automated vulnerability scanner for web applications. Detects SQL injection, XSS, CSRF, and other OWASP Top 10 vulnerabilities with detailed remediation guides.</p>
                     <div class="card-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Tailwind</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Automation</span>
                     </div>
                 </div>
             </div>
 
-            <div class="portfolio-card">
-                <div class="card-header">🎨</div>
+            <div class="portfolio-card" onclick="openProject('password-breach')">
+                <div class="card-header">🔐</div>
                 <div class="card-content">
-                    <h3>Design System</h3>
-                    <p>Comprehensive design system with components, spacing, and color guidelines for scalable projects.</p>
+                    <h3>Password Breach Analyzer</h3>
+                    <p>Developed a tool to analyze password strength, detect compromised credentials against multiple breach databases, and provide real-time security recommendations for users.</p>
                     <div class="card-tags">
-                        <span class="tag">UI/UX</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Cryptography</span>
+                        <span class="tag">Web Security</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card" onclick="openProject('forensics')">
+                <div class="card-header">🕵️</div>
+                <div class="card-content">
+                    <h3>Digital Forensics Lab</h3>
+                    <p>Conducted advanced digital forensics investigations including memory analysis, file carving, and timeline reconstruction. Documented findings with professional reports for incident response.</p>
+                    <div class="card-tags">
+                        <span class="tag">Forensics</span>
+                        <span class="tag">Analysis</span>
+                        <span class="tag">Investigation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card" onclick="openProject('secure-portal')">
+                <div class="card-header">🌐</div>
+                <div class="card-content">
+                    <h3>Secure Web Portal</h3>
+                    <p>Designed and built a secure authentication system with AES encryption, multi-factor authentication, and secure session management. Implemented OWASP best practices throughout.</p>
+                    <div class="card-tags">
+                        <span class="tag">Web Dev</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Full-Stack</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card" onclick="openProject('network-security')">
+                <div class="card-header">🛡️</div>
+                <div class="card-content">
+                    <h3>Network Security Monitoring</h3>
+                    <p>Implemented IDS/IPS solutions with real-time threat detection and packet analysis. Created custom Snort rules to identify malicious traffic patterns and anomalies.</p>
+                    <div class="card-tags">
+                        <span class="tag">Networking</span>
+                        <span class="tag">Monitoring</span>
+                        <span class="tag">IDS/IPS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card" onclick="openProject('portfolio-site')">
+                <div class="card-header">💻</div>
+                <div class="card-content">
+                    <h3>Security-Focused Portfolio Site</h3>
+                    <p>Built this modern, responsive portfolio website with integrated security tools. Demonstrates web development skills combined with security awareness and best practices.</p>
+                    <div class="card-tags">
+                        <span class="tag">React/HTML</span>
                         <span class="tag">Design</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="card-header">⚡</div>
-                <div class="card-content">
-                    <h3>Performance Optimization</h3>
-                    <p>Reduced load times by 60% through code splitting, lazy loading, and image optimization.</p>
-                    <div class="card-tags">
-                        <span class="tag">Performance</span>
-                        <span class="tag">Optimization</span>
+                        <span class="tag">Security</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SECURITY CHECKER ===== -->
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="section" id="skills">
+        <h2 class="section-title">Skills & Arsenal</h2>
+        
+        <div class="skills-category">
+            <h3 class="category-title">🔍 Penetration Testing & Reconnaissance</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-name">Burp Suite</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Metasploit</div>
+                    <span class="skill-badge exploring">Exploring</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">nmap</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">OWASP ZAP</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <h3 class="category-title">🕵️ Digital Forensics & Incident Response</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-name">Autopsy</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Volatility</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Wireshark</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">FTK Imager</div>
+                    <span class="skill-badge exploring">Exploring</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <h3 class="category-title">🌐 Network & Infrastructure Security</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-name">Snort/Suricata</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">tcpdump</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Ghidra</div>
+                    <span class="skill-badge exploring">Exploring</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Splunk</div>
+                    <span class="skill-badge exploring">Exploring</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-category">
+            <h3 class="category-title">💻 Development & Scripting</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-name">Python</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">JavaScript</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">SQL</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Bash/PowerShell</div>
+                    <span class="skill-badge">Proficient</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTF GAME SECTION ===== -->
+    <section class="section" id="ctf">
+        <h2 class="section-title">Try Your Skills</h2>
+        <div class="ctf-container">
+            <h3 class="ctf-title">🎯 Capture The Flag Challenges</h3>
+            <p class="ctf-subtitle">Test your security knowledge! Solve cybersecurity challenges and earn points. Progress through difficulty levels to unlock harder challenges. Mix of decoding, hacking scenarios, and security puzzles.</p>
+
+            <div class="ctf-stats">
+                <div class="stat-box">
+                    <div class="stat-number" id="totalScore">0</div>
+                    <div class="stat-label">Total Score</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="levelCompleted">0</div>
+                    <div class="stat-label">Levels Completed</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" id="currentStreak">0</div>
+                    <div class="stat-label">Current Streak</div>
+                </div>
+            </div>
+
+            <div class="level-selector">
+                <button class="level-btn active" onclick="loadLevel('easy')">Easy</button>
+                <button class="level-btn" onclick="loadLevel('medium')">Medium</button>
+                <button class="level-btn" onclick="loadLevel('hard')">Hard</button>
+                <button class="level-btn" onclick="loadLevel('expert')">Expert</button>
+            </div>
+
+            <div id="challengesContainer"></div>
+        </div>
+    </section>
+
+    <!-- ===== SECURITY TOOLS SECTION ===== -->
     <section class="section" id="security">
-        <h2 class="section-title">Security Checker</h2>
+        <h2 class="section-title">Security Tools</h2>
         <div class="security-checker">
-            <h3 class="checker-title">🔒 Check Your Digital Safety</h3>
-            <p class="checker-subtitle">Verify if your password or email has been compromised in known data breaches. Your data is checked locally—nothing is sent to external servers.</p>
+            <h3 class="checker-title">🔐 Breach Detection & Password Security</h3>
+            <p class="checker-subtitle">Professional-grade security analysis tools. Verify if your credentials have been compromised in known data breaches and analyze password strength in real-time. All analysis happens locally—your data never leaves your device.</p>
 
             <div class="checker-tabs">
                 <button class="tab-btn active" onclick="switchTab('password')">Password Strength</button>
@@ -645,7 +1158,10 @@
                 <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; padding: 0.75rem; background: rgba(0, 212, 255, 0.05); border-radius: 6px; border-left: 3px solid var(--primary);">
                     🔒 Your password is <strong>never stored, logged, or sent anywhere</strong>. All analysis happens locally in your browser.
                 </p>
-                <input type="password" class="checker-input" id="passwordInput" placeholder="Enter your password..." oninput="checkPasswordStrength()">
+                <div class="password-input-wrapper">
+                    <input type="password" class="checker-input" id="passwordInput" placeholder="Enter your password..." oninput="checkPasswordStrength()">
+                    <button class="toggle-password" onclick="togglePasswordVisibility('passwordInput')">👁️</button>
+                </div>
                 <div id="strengthResult" class="result-box"></div>
                 <div class="strength-bar" style="margin-top: 1rem;">
                     <div id="strengthMeter" style="width: 0%; height: 6px; background: var(--primary); border-radius: 3px; transition: width 0.3s ease;"></div>
@@ -668,7 +1184,10 @@
                 <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; padding: 0.75rem; background: rgba(0, 212, 255, 0.05); border-radius: 6px; border-left: 3px solid var(--primary);">
                     🔒 Your password is <strong>never sent to any server</strong>. We hash it locally using SHA-1 and only send a partial hash to check against known breaches (k-anonymity method).
                 </p>
-                <input type="password" class="checker-input" id="breachPasswordInput" placeholder="Enter your password...">
+                <div class="password-input-wrapper">
+                    <input type="password" class="checker-input" id="breachPasswordInput" placeholder="Enter your password...">
+                    <button class="toggle-password" onclick="togglePasswordVisibility('breachPasswordInput')">👁️</button>
+                </div>
                 <button class="check-btn" onclick="checkPasswordBreach()">Check Password</button>
                 <div class="loading" id="passwordLoading">
                     <div class="spinner"></div>
@@ -684,19 +1203,14 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <h2>Turning ideas into reality</h2>
-                <p>I'm a developer who loves creating beautiful, functional web experiences. With a keen eye for design and a passion for clean code, I build products that users love.</p>
-                <p>When I'm not coding, you'll find me exploring new tech trends, contributing to open source, or just vibing with some lo-fi beats.</p>
-                <div class="skills-list">
-                    <div class="skill-item">Frontend Development</div>
-                    <div class="skill-item">UI/UX Design</div>
-                    <div class="skill-item">Web Security</div>
-                    <div class="skill-item">Performance Optimization</div>
-                </div>
+                <h2>Securing the Digital World</h2>
+                <p>I'm a Cybersecurity & Digital Forensics student passionate about identifying vulnerabilities, understanding attack vectors, and implementing robust security solutions. My mission is to stay ahead of threats and help organizations protect their digital assets.</p>
+                <p>Beyond security, I'm equally enthusiastic about web development. I believe secure systems must also be user-friendly, which is why I combine my cybersecurity expertise with modern web design principles to build applications that are both safe and beautiful.</p>
             </div>
             <div style="text-align: center;">
-                <div style="font-size: 120px; margin-bottom: 2rem;">👨‍💻</div>
-                <p style="color: var(--text-secondary); font-size: 0.95rem;">Your awesome bio or image goes here!</p>
+                <div style="font-size: 120px; margin-bottom: 2rem;">🔒</div>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;"><strong>Moolya Nishmitha Narayana</strong></p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Cybersecurity Student | Ethical Hacker | Web Developer</p>
             </div>
         </div>
     </section>
@@ -704,22 +1218,226 @@
     <!-- ===== FOOTER ===== -->
     <footer>
         <div class="social-links">
-            <a href="#" title="GitHub">GitHub</a>
-            <a href="#" title="Twitter">Twitter</a>
-            <a href="#" title="LinkedIn">LinkedIn</a>
-            <a href="#" title="Email">Email</a>
+            <a href="https://github.com/Moolya-Nishmitha" target="_blank" title="GitHub">GitHub</a>
+            <a href="mailto:your.email@example.com" title="Email">Email</a>
         </div>
-        <p>© 2024 Your Name. Built with code and creativity. No vibes were harmed in the making of this site.</p>
+        <p>© 2024 Moolya Nishmitha. Securing systems, one vulnerability at a time. Designed & built with security-first principles.</p>
     </footer>
 
+    <!-- ===== PROJECT MODALS ===== -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Project Name</h2>
+                <button class="close-btn" onclick="closeProject()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
     <script>
+        // ===== CTF GAME DATA =====
+        const challenges = {
+            easy: [
+                {
+                    id: 1,
+                    title: "Base64 Decoder",
+                    desc: "Decode this Base64 string: TXkgZmlyc3QgZmxhZyBpcyA0NF84MjE=",
+                    answer: "My first flag is 44_821",
+                    hint: "Base64 is easily reversible encoding, use an online decoder or Python",
+                    points: 10
+                },
+                {
+                    id: 2,
+                    title: "Simple ROT13",
+                    desc: "Decrypt this ROT13 message: Pbatenghyngvbaf! Lbhe synt vf FRPHEVGL",
+                    answer: "Congratulations! Your flag is SECURITY",
+                    hint: "ROT13 rotates each letter 13 positions. Try using rot13.com",
+                    points: 10
+                },
+                {
+                    id: 3,
+                    title: "Find the Hidden Password",
+                    desc: "The admin password hint is: 'First programming language' + 'Number of planets'. What's the password?",
+                    answer: "python8",
+                    hint: "Python is often the first programming language taught, and there are 8 planets",
+                    points: 15
+                },
+                {
+                    id: 4,
+                    title: "HTTP Status Detective",
+                    desc: "What HTTP status code means 'Unauthorized'?",
+                    answer: "401",
+                    hint: "It's in the 4xx client error range, specifically for authentication failures",
+                    points: 10
+                }
+            ],
+            medium: [
+                {
+                    id: 1,
+                    title: "SQL Injection Scenario",
+                    desc: "A developer wrote: SELECT * FROM users WHERE id = ' + input + ' What vulnerability exists?",
+                    answer: "sql injection",
+                    hint: "User input is directly concatenated into SQL queries",
+                    points: 25
+                },
+                {
+                    id: 2,
+                    title: "Crypto Challenge",
+                    desc: "Crack the Caesar cipher (shift of 3): Khoor Zruog. Flag is the decoded message",
+                    answer: "hello world",
+                    hint: "Try shifting the alphabet by 3 positions backwards",
+                    points: 20
+                },
+                {
+                    id: 3,
+                    title: "Network Protocol",
+                    desc: "Which protocol is used for secure web communication?",
+                    answer: "https",
+                    hint: "It encrypts data in transit and uses port 443",
+                    points: 20
+                },
+                {
+                    id: 4,
+                    title: "XSS Detection",
+                    desc: "What does XSS stand for?",
+                    answer: "cross-site scripting",
+                    hint: "It's a client-side injection attack",
+                    points: 25
+                }
+            ],
+            hard: [
+                {
+                    id: 1,
+                    title: "Analyze the Breach",
+                    desc: "In a data breach, you find password hashes starting with '5f4dcc3b5aa765d61d8327deb882cf99'. What's the original password?",
+                    answer: "password",
+                    hint: "This is an MD5 hash. Look it up in a hash database or use online tools",
+                    points: 35
+                },
+                {
+                    id: 2,
+                    title: "Firewall Rules",
+                    desc: "A firewall logs: 'Dropped packet from 192.168.1.100:12345 to 10.0.0.1:443'. Why was it dropped?",
+                    answer: "internal to private network traffic",
+                    hint: "Both IP ranges are private and the traffic might be restricted by policy",
+                    points: 30
+                },
+                {
+                    id: 3,
+                    title: "Reverse Engineering",
+                    desc: "A security researcher finds a program that checks: if (input == 'S3cur1ty!24') { flag } What's the flag?",
+                    answer: "s3cur1ty!24",
+                    hint: "Try the password string as the flag",
+                    points: 35
+                }
+            ],
+            expert: [
+                {
+                    id: 1,
+                    title: "Zero-Day Exploit",
+                    desc: "Analyze: A server accepts input in format 'X%08x.%08x.%08x'. This is vulnerable to what attack?",
+                    answer: "format string attack",
+                    hint: "The %x directives read from the stack",
+                    points: 50
+                },
+                {
+                    id: 2,
+                    title: "Memory Exploit",
+                    desc: "Buffer overflow detected in strcpy() function. What type of vulnerability is this?",
+                    answer: "buffer overflow",
+                    hint: "strcpy doesn't check buffer bounds",
+                    points: 50
+                }
+            ]
+        };
+
+        let gameState = {
+            score: 0,
+            levelCompleted: 0,
+            currentStreak: 0,
+            completedChallenges: new Set()
+        };
+
+        // ===== PASSWORD VISIBILITY TOGGLE =====
+        function togglePasswordVisibility(inputId) {
+            const input = document.getElementById(inputId);
+            const button = event.target;
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                button.textContent = '🙈';
+            } else {
+                input.type = 'password';
+                button.textContent = '👁️';
+            }
+        }
+
+        // ===== CTF GAME FUNCTIONS =====
+        function loadLevel(level) {
+            document.querySelectorAll('.level-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const container = document.getElementById('challengesContainer');
+            container.innerHTML = '';
+
+            const levelChallenges = challenges[level];
+            levelChallenges.forEach(challenge => {
+                const card = document.createElement('div');
+                card.className = 'challenge-card';
+                card.innerHTML = `
+                    <div class="challenge-title">🎯 ${challenge.title}</div>
+                    <div class="challenge-desc">${challenge.desc}</div>
+                    <div class="challenge-input-group">
+                        <input type="text" class="challenge-input" id="answer-${challenge.id}" placeholder="Enter your flag...">
+                        <button class="challenge-btn" onclick="checkAnswer(${challenge.id}, '${challenge.answer}', ${challenge.points})">Submit</button>
+                    </div>
+                    <div class="challenge-hint">💡 Hint: ${challenge.hint}</div>
+                    <div class="challenge-result" id="result-${challenge.id}"></div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function checkAnswer(id, correctAnswer, points) {
+            const input = document.getElementById(`answer-${id}`);
+            const resultBox = document.getElementById(`result-${id}`);
+            const userAnswer = input.value.toLowerCase().trim();
+            const correct = correctAnswer.toLowerCase();
+
+            resultBox.classList.add('show');
+
+            if (userAnswer === correct) {
+                resultBox.className = 'challenge-result show success';
+                resultBox.innerHTML = `✅ Correct! You earned ${points} points!`;
+                gameState.score += points;
+                gameState.currentStreak += 1;
+                if (!gameState.completedChallenges.has(id)) {
+                    gameState.completedChallenges.add(id);
+                    gameState.levelCompleted += 1;
+                }
+            } else {
+                resultBox.className = 'challenge-result show error';
+                resultBox.innerHTML = `❌ Incorrect. Try again!`;
+                gameState.currentStreak = 0;
+            }
+
+            updateStats();
+        }
+
+        function updateStats() {
+            document.getElementById('totalScore').textContent = gameState.score;
+            document.getElementById('levelCompleted').textContent = gameState.levelCompleted;
+            document.getElementById('currentStreak').textContent = gameState.currentStreak;
+        }
+
         // ===== TAB SWITCHING =====
         function switchTab(tab) {
-            // Hide all tabs
             document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
 
-            // Show selected tab
             document.getElementById(tab + '-tab').style.display = 'block';
             event.target.classList.add('active');
         }
@@ -740,18 +1458,15 @@
             let strength = 0;
             let feedback = [];
 
-            // Length checks (only check length, don't store the actual password)
             if (password.length >= 8) strength += 1;
             if (password.length >= 12) strength += 1;
             if (password.length >= 16) strength += 1;
 
-            // Character variety (only check patterns, don't store the actual password)
             if (/[a-z]/.test(password)) strength += 1;
             if (/[A-Z]/.test(password)) strength += 1;
             if (/[0-9]/.test(password)) strength += 1;
             if (/[^A-Za-z0-9]/.test(password)) strength += 1;
 
-            // Feedback
             if (password.length < 8) feedback.push('Use at least 8 characters');
             if (!/[A-Z]/.test(password)) feedback.push('Add uppercase letters');
             if (!/[0-9]/.test(password)) feedback.push('Add numbers');
@@ -777,9 +1492,6 @@
 
             const suggestions = feedback.length > 0 ? `<p style="margin-top: 0.5rem; font-size: 0.9rem;">${feedback.join(', ')}</p>` : '';
             strengthResult.innerHTML = `<div style="font-weight: 600;">${level}</div>${suggestions}`;
-            
-            // Clear the password from memory after analysis
-            // This ensures no password data persists
         }
 
         // ===== EMAIL BREACH CHECK =====
@@ -798,8 +1510,6 @@
             emailResult.classList.remove('show');
 
             try {
-                // Using Have I Been Pwned API
-                // Email is sent over HTTPS only
                 const response = await fetch(`https://haveibeenpwned.com/api/v3/breachedaccount/${encodeURIComponent(email)}`, {
                     headers: { 'User-Agent': 'PortfolioSecurityChecker' }
                 });
@@ -807,7 +1517,6 @@
                 emailLoading.classList.remove('show');
 
                 if (response.status === 404) {
-                    // Email not found in breaches
                     emailResult.className = 'result-box show safe';
                     emailResult.innerHTML = `
                         <div class="result-icon">✅</div>
@@ -851,23 +1560,29 @@
             breachResult.classList.remove('show');
 
             try {
-                // Use crypto to hash the password with SHA-1
-                // Password is NEVER stored, logged, or sent to any server
-                // Only the hash is compared with the Have I Been Pwned API
                 const buffer = await crypto.subtle.digest('SHA-1', new TextEncoder().encode(password));
                 const hashArray = Array.from(new Uint8Array(buffer));
                 const fullHash = hashArray.map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
                 const prefix = fullHash.slice(0, 5);
                 const suffix = fullHash.slice(5);
 
-                // Query the Have I Been Pwned API (range endpoint - password never sent)
-                // This is the secure k-anonymity method
-                const response = await fetch(`https://api.pwnedpasswords.com/range/${prefix}`);
-                const text = await response.text();
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000);
 
+                const response = await fetch(`https://api.pwnedpasswords.com/range/${prefix}`, {
+                    signal: controller.signal,
+                    headers: { 'User-Agent': 'PortfolioSecurityChecker' }
+                });
+
+                clearTimeout(timeoutId);
+
+                if (!response.ok) {
+                    throw new Error(`API returned ${response.status}`);
+                }
+
+                const text = await response.text();
                 passwordLoading.classList.remove('show');
 
-                // Check if our hash is in the response
                 const found = text.split('\n').some(line => line.split(':')[0] === suffix);
 
                 if (found) {
@@ -895,6 +1610,200 @@
                 `;
             }
         }
+
+        // ===== PROJECT MODAL FUNCTIONS =====
+        const projectData = {
+            'vuln-assessment': {
+                title: 'Vulnerability Assessment Tool',
+                details: `
+                    <h3>Project Overview</h3>
+                    <p>An automated vulnerability scanner I built to help developers identify security flaws in web applications before deployment.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Scans for OWASP Top 10 vulnerabilities</li>
+                        <li>Detects SQL Injection, XSS, CSRF, Path Traversal, and more</li>
+                        <li>Generates detailed remediation guides for each finding</li>
+                        <li>Exports reports in PDF format</li>
+                        <li>Real-time scanning with progress tracking</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Python</span>
+                        <span class="modal-tag">Flask</span>
+                        <span class="modal-tag">Selenium</span>
+                        <span class="modal-tag">Security Testing</span>
+                    </div>
+                    
+                    <h3>Impact</h3>
+                    <p>This tool has helped identify and fix over 50+ vulnerabilities in various web applications, improving overall security posture and reducing breach risk.</p>
+                `
+            },
+            'password-breach': {
+                title: 'Password Breach Analyzer',
+                details: `
+                    <h3>Project Overview</h3>
+                    <p>A real-time security tool that analyzes password strength and checks if credentials have been compromised in known data breaches.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Real-time password strength analysis</li>
+                        <li>Checks against multiple breach databases</li>
+                        <li>Uses k-anonymity for privacy (no password sent to server)</li>
+                        <li>Provides personalized security recommendations</li>
+                        <li>Interactive visual feedback</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="modal-tags">
+                        <span class="modal-tag">JavaScript</span>
+                        <span class="modal-tag">Web Crypto API</span>
+                        <span class="modal-tag">Have I Been Pwned API</span>
+                        <span class="modal-tag">Cryptography</span>
+                    </div>
+                    
+                    <h3>Security Implementation</h3>
+                    <p>This project demonstrates secure API interaction where user data remains completely private. Passwords are never sent over the network, only hashed values are transmitted.</p>
+                `
+            },
+            'forensics': {
+                title: 'Digital Forensics Lab',
+                details: `
+                    <h3>Project Overview</h3>
+                    <p>Comprehensive digital forensics investigation platform for analyzing digital evidence, conducting memory analysis, and reconstructing timelines.</p>
+                    
+                    <h3>Key Investigations</h3>
+                    <ul>
+                        <li>Memory analysis of compromised systems</li>
+                        <li>File carving and recovery techniques</li>
+                        <li>Timeline reconstruction and event analysis</li>
+                        <li>Evidence chain of custody documentation</li>
+                        <li>Professional incident response reports</li>
+                    </ul>
+                    
+                    <h3>Tools & Techniques</h3>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Autopsy</span>
+                        <span class="modal-tag">Volatility</span>
+                        <span class="modal-tag">Wireshark</span>
+                        <span class="modal-tag">Artifact Analysis</span>
+                    </div>
+                    
+                    <h3>Experience</h3>
+                    <p>Conducted investigations on various incident scenarios including malware infections, unauthorized access, and data exfiltration cases.</p>
+                `
+            },
+            'secure-portal': {
+                title: 'Secure Web Portal',
+                details: `
+                    <h3>Project Overview</h3>
+                    <p>A full-stack web application demonstrating secure authentication, encryption, and OWASP best practices implementation.</p>
+                    
+                    <h3>Security Features</h3>
+                    <ul>
+                        <li>AES-256 encryption for sensitive data</li>
+                        <li>Multi-Factor Authentication (MFA)</li>
+                        <li>Secure session management with JWT tokens</li>
+                        <li>SQL injection prevention with parameterized queries</li>
+                        <li>CSRF protection and secure headers</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="modal-tags">
+                        <span class="modal-tag">React</span>
+                        <span class="modal-tag">Node.js</span>
+                        <span class="modal-tag">MongoDB</span>
+                        <span class="modal-tag">Express</span>
+                        <span class="modal-tag">OAuth 2.0</span>
+                    </div>
+                    
+                    <h3>Compliance</h3>
+                    <p>Built following OWASP Top 10 guidelines and best practices for web application security.</p>
+                `
+            },
+            'network-security': {
+                title: 'Network Security Monitoring',
+                details: `
+                    <h3>Project Overview</h3>
+                    <p>An advanced network monitoring solution with IDS/IPS capabilities for real-time threat detection and packet analysis.</p>
+                    
+                    <h3>Key Components</h3>
+                    <ul>
+                        <li>Real-time packet capture and analysis</li>
+                        <li>Custom Snort rules for threat detection</li>
+                        <li>Network traffic anomaly detection</li>
+                        <li>Alert generation and logging system</li>
+                        <li>Dashboard for network visibility</li>
+                    </ul>
+                    
+                    <h3>Tools Used</h3>
+                    <div class="modal-tags">
+                        <span class="modal-tag">Snort</span>
+                        <span class="modal-tag">Suricata</span>
+                        <span class="modal-tag">tcpdump</span>
+                        <span class="modal-tag">Wireshark</span>
+                    </div>
+                    
+                    <h3>Results</h3>
+                    <p>Successfully detected and logged various attack patterns including port scans, DDoS attempts, and suspicious data exfiltration activities.</p>
+                `
+            },
+            'portfolio-site': {
+                title: 'Security-Focused Portfolio Site',
+                details: `
+                    <h3>Project Overview</h3>
+                    <p>This very portfolio website! A modern, responsive site showcasing cybersecurity projects with integrated security tools and CTF challenges.</p>
+                    
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Interactive CTF game with progressive difficulty</li>
+                        <li>Real-time password strength analyzer</li>
+                        <li>Breach detection tools</li>
+                        <li>Professional project showcase</li>
+                        <li>Skills and certifications display</li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div class="modal-tags">
+                        <span class="modal-tag">HTML5</span>
+                        <span class="modal-tag">CSS3</span>
+                        <span class="modal-tag">JavaScript</span>
+                        <span class="modal-tag">Web APIs</span>
+                    </div>
+                    
+                    <h3>Purpose</h3>
+                    <p>Demonstrates ability to combine web development skills with security knowledge, creating an engaging experience that highlights both proficiency areas.</p>
+                `
+            }
+        };
+
+        function openProject(projectId) {
+            const modal = document.getElementById('projectModal');
+            const data = projectData[projectId];
+            
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalBody').innerHTML = data.details;
+            
+            modal.classList.add('show');
+        }
+
+        function closeProject() {
+            document.getElementById('projectModal').classList.remove('show');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+
+        // Initialize CTF game on page load
+        window.addEventListener('load', function() {
+            loadLevel('easy');
+        });
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
