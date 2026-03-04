@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moolya Nishmitha - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d4ff;
+            --secondary: #ff006e;
+            --accent: #8338ec;
+            --dark-bg: #0a0e27;
+            --card-bg: #12162f;
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --border: #1f2742;
+        }
+
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            background-attachment: fixed;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(10, 14, 39, 0.7);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== RESUME CONTAINER ===== */
+        .resume-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.1);
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 1.5rem;
+        }
+
+        .resume-name {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .resume-title {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .resume-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .resume-contact a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .resume-contact a:hover {
+            color: var(--secondary);
+        }
+
+        .resume-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .resume-entry {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .resume-entry:last-child {
+            border-bottom: none;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .entry-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .entry-subtitle {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        .entry-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .entry-location {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .entry-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-top: 0.5rem;
+        }
+
+        .entry-description ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .entry-description li {
+            margin-bottom: 0.4rem;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .skill-tag.secondary {
+            background: rgba(255, 0, 110, 0.1);
+            color: var(--secondary);
+            border-color: rgba(255, 0, 110, 0.3);
+        }
+
+        .skill-tag.accent {
+            background: rgba(131, 56, 236, 0.1);
+            color: var(--accent);
+            border-color: rgba(131, 56, 236, 0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--card-bg);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: 4rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: #000;
+            padding: 12px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+            nav {
+                display: none;
+            }
+            footer {
+                display: none;
+            }
+            .download-btn {
+                display: none;
+            }
+            .resume-container {
+                background: #fff;
+                border: none;
+                color: #000;
+                box-shadow: none;
+            }
+            .section-title, .resume-name, .entry-title {
+                color: #000;
+            }
+            .entry-subtitle, .entry-date, .entry-location, .entry-description {
+                color: #333;
+            }
+            .skill-tag {
+                background: #f0f0f0;
+                color: #000;
+                border: 1px solid #999;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .resume-name {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .resume-contact {
+                gap: 1rem;
+                flex-direction: column;
+            }
+
+            .entry-header {
+                flex-direction: column;
+            }
+
+            .entry-date {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">🛡️ Moolya</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#work">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== RESUME ===== -->
+    <div class="resume-container">
+        <button class="download-btn" onclick="window.print()">📄 Print / Download as PDF</button>
+
+        <div class="resume-header">
+            <div class="resume-name">MOOLYA NISHMITHA NARAYANA</div>
+            <div class="resume-title">Cybersecurity & Forensics Specialist</div>
+            <div class="resume-contact">
+                <span>📍 Bengaluru, Karnataka, IN</span>
+                <a href="https://github.com/Moolya-Nishmitha" target="_blank">GitHub</a>
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="index.html">Portfolio</a>
+            </div>
+        </div>
+
+        <!-- PROFESSIONAL SUMMARY -->
+        <div class="resume-section">
+            <div class="section-title">Professional Summary</div>
+            <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+                Cybersecurity and Digital Forensics student with expertise in vulnerability assessment, penetration testing, and incident response. Passionate about identifying security threats, implementing robust defense mechanisms, and helping organizations protect their digital assets. Proficient in both security tools and web development, combining technical depth with user-focused solutions.
+            </p>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="resume-section">
+            <div class="section-title">Education</div>
+            
+            <div class="resume-entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Bachelor of Technology - Information Security</div>
+                        <div class="entry-subtitle">[Your University Name]</div>
+                    </div>
+                    <div class="entry-date">[Expected Graduation Year]</div>
+                </div>
+                <div class="entry-location">Bengaluru, Karnataka, India</div>
+                <div class="entry-description">
+                    <p>Relevant Coursework: Cryptography, Network Security, Digital Forensics, Web Application Security, System Hardening, Incident Response</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <div class="resume-section">
+            <div class="section-title">Professional Experience</div>
+            
+            <div class="resume-entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Security Researcher / Penetration Tester</div>
+                        <div class="entry-subtitle">[Company Name] (if applicable)</div>
+                    </div>
+                    <div class="entry-date">[Dates]</div>
+                </div>
+                <div class="entry-location">[Location]</div>
+                <div class="entry-description">
+                    <ul>
+                        <li>Conducted vulnerability assessments and penetration tests on web applications and networks</li>
+                        <li>Identified and documented security flaws, providing remediation recommendations</li>
+                        <li>Utilized tools: Burp Suite, Metasploit, nmap, OWASP ZAP</li>
+                        <li>Collaborated with development teams to implement security fixes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-entry">
+                <div class="entry-header">
+                    <div>
+                        <div class="entry-title">Digital Forensics Analyst</div>
+                        <div class="entry-subtitle">[Company / Lab Name] (if applicable)</div>
+                    </div>
+                    <div class="entry-date">[Dates]</div>
+                </div>
+                <div class="entry-location">[Location]</div>
+                <div class="entry-description">
+                    <ul>
+                        <li>Conducted digital forensic investigations on compromised systems</li>
+                        <li>Performed memory analysis, file carving, and timeline reconstruction</li>
+                        <li>Generated professional incident response reports with findings and recommendations</li>
+                        <li>Tools used: Autopsy, Volatility, Wireshark, FTK Imager</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECTS & ACHIEVEMENTS -->
+        <div class="resume-section">
+            <div class="section-title">Key Projects</div>
+            
+            <div class="resume-entry">
+                <div class="entry-title">Vulnerability Assessment Tool</div>
+                <div class="entry-description">
+                    Developed an automated web application vulnerability scanner that detects OWASP Top 10 vulnerabilities with detailed remediation guides. Identified 50+ security issues across multiple applications.
+                </div>
+            </div>
+
+            <div class="resume-entry">
+                <div class="entry-title">Password Breach Analyzer</div>
+                <div class="entry-description">
+                    Built a real-time password security tool with breach detection using k-anonymity. Demonstrates secure API interaction while maintaining complete user privacy.
+                </div>
+            </div>
+
+            <div class="resume-entry">
+                <div class="entry-title">Network Security Monitoring System</div>
+                <div class="entry-description">
+                    Implemented IDS/IPS solution with custom threat detection rules. Successfully identified and logged malicious traffic patterns and anomalies.
+                </div>
+            </div>
+
+            <div class="resume-entry">
+                <div class="entry-title">Security-Focused Portfolio Website</div>
+                <div class="entry-description">
+                    Designed and built a modern portfolio site with integrated security tools, CTF challenges, and interactive demonstrations of security concepts.
+                </div>
+            </div>
+        </div>
+
+        <!-- TECHNICAL SKILLS -->
+        <div class="resume-section">
+            <div class="section-title">Technical Skills</div>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--secondary); margin-bottom: 0.75rem;">Penetration Testing & Vulnerability Assessment</h4>
+                <div class="skills-list">
+                    <div class="skill-tag">Burp Suite</div>
+                    <div class="skill-tag">Metasploit</div>
+                    <div class="skill-tag">nmap</div>
+                    <div class="skill-tag">OWASP ZAP</div>
+                    <div class="skill-tag">Web Scanning</div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--accent); margin-bottom: 0.75rem;">Digital Forensics & Incident Response</h4>
+                <div class="skills-list">
+                    <div class="skill-tag secondary">Autopsy</div>
+                    <div class="skill-tag secondary">Volatility</div>
+                    <div class="skill-tag secondary">Wireshark</div>
+                    <div class="skill-tag secondary">FTK Imager</div>
+                    <div class="skill-tag secondary">Memory Analysis</div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--primary); margin-bottom: 0.75rem;">Network & Security</h4>
+                <div class="skills-list">
+                    <div class="skill-tag">Snort/Suricata</div>
+                    <div class="skill-tag">tcpdump</div>
+                    <div class="skill-tag">IDS/IPS</div>
+                    <div class="skill-tag">Network Analysis</div>
+                    <div class="skill-tag">Threat Detection</div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--secondary); margin-bottom: 0.75rem;">Programming & Scripting</h4>
+                <div class="skills-list">
+                    <div class="skill-tag accent">Python</div>
+                    <div class="skill-tag accent">JavaScript</div>
+                    <div class="skill-tag accent">SQL</div>
+                    <div class="skill-tag accent">Bash</div>
+                    <div class="skill-tag accent">PowerShell</div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: var(--primary); margin-bottom: 0.75rem;">Web Development</h4>
+                <div class="skills-list">
+                    <div class="skill-tag">HTML/CSS</div>
+                    <div class="skill-tag">React</div>
+                    <div class="skill-tag">Node.js</div>
+                    <div class="skill-tag">OWASP Practices</div>
+                    <div class="skill-tag">Secure Coding</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CERTIFICATIONS & TRAINING -->
+        <div class="resume-section">
+            <div class="section-title">Certifications & Training</div>
+            
+            <div class="resume-entry">
+                <div class="entry-title">[Add Your Certifications Here]</div>
+                <div class="entry-description">
+                    <p>Examples: CEH (Certified Ethical Hacker), Security+, OSCP, GIAC certifications, etc.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANGUAGES -->
+        <div class="resume-section">
+            <div class="section-title">Languages</div>
+            <div class="skills-list">
+                <div class="skill-tag">English - Fluent</div>
+                <div class="skill-tag secondary">Hindi - Fluent</div>
+                <div class="skill-tag accent">Kannada - Native</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2024 Moolya Nishmitha. Securing systems, one vulnerability at a time.</p>
+    </footer>
+
+    <script>
+        // Smooth navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
